@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { database } from "../../config/Firebase";
 import Swal from "sweetalert2";
-import { Button, TextField, MenuItem, Select, InputLabel, FormControl, Container, Typography } from '@mui/material';
+import { Button, TextField, MenuItem, Select, InputLabel, FormControl, Container, Typography, Paper } from '@mui/material';
 
 const EditTeacher = () => {
   const [editData, setEditData] = useState({
@@ -32,7 +32,7 @@ const EditTeacher = () => {
     { value: 7, label: 7 },
     { value: 8, label: 8 },
     { value: 9, label: 9 },
-    { value: 0, label: 10 },
+    { value: 10, label: 10 },
   ];
 
   const handleChange = (e) => {
@@ -75,13 +75,14 @@ const EditTeacher = () => {
   }, [id]);
 
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h4" gutterBottom>
+   
+    <Container maxWidth="sm" className="container  mt-5">
+      <Typography variant="h4" gutterBottom className="title">
         Edit Teacher
       </Typography>
-      <FormControl fullWidth margin="normal">
+      <FormControl fullWidth margin="normal" className="formControl">
         <TextField
-          label="Name"
+          label="Teacher Name"
           value={editData.teacherName}
           onChange={handleChange}
           name="teacherName"
@@ -89,7 +90,7 @@ const EditTeacher = () => {
         />
       </FormControl>
      
-      <FormControl fullWidth margin="normal">
+      <FormControl fullWidth margin="normal" className="formControl">
         <InputLabel>Gender</InputLabel>
         <Select
           value={editData.gender}
@@ -104,7 +105,7 @@ const EditTeacher = () => {
           ))}
         </Select>
       </FormControl>
-      <FormControl fullWidth margin="normal">
+      <FormControl fullWidth margin="normal" className="formControl">
         <InputLabel>Class Room</InputLabel>
         <Select
           value={editData.classRoom}
@@ -119,7 +120,7 @@ const EditTeacher = () => {
           ))}
         </Select>
       </FormControl>
-      <FormControl fullWidth margin="normal">
+      <FormControl fullWidth margin="normal" className="formControl">
         <TextField
           label="subject Number"
           type="text"
@@ -131,13 +132,15 @@ const EditTeacher = () => {
       </FormControl>
       <Button 
         variant="contained" 
-        color="primary" 
+        // color="primary" 
+        className="addbtn"
         onClick={handleEdit}
         fullWidth
       >
         Edit
       </Button>
     </Container>
+ 
   );
 };
 

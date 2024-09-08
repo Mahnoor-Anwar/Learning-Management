@@ -16,9 +16,6 @@ const EditSyllabus = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-
-
-
   const handleChange = (e) => {
     const { name } = e.target;
     setEditData((prevState) => ({
@@ -59,7 +56,7 @@ const EditSyllabus = () => {
   }, [id]);
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Edit Syllabus
       </Typography>
@@ -99,7 +96,8 @@ const EditSyllabus = () => {
       </FormControl>
       <Button 
         variant="contained" 
-        color="primary" 
+        // color="primary" 
+        className="addbtn"
         onClick={handleEdit}
         fullWidth
       >

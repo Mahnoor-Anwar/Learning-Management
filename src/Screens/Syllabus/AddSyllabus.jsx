@@ -44,14 +44,14 @@ const AddSyllabus = () => {
   };
 
   return (
-    <Container>
+    <Container className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Add Syllabus
       </Typography>
       <TextField
         fullWidth
         margin="normal"
-        label="Name"
+        label="Subject Name"
         onChange={(e) => setSubject(e.target.value)}
       />
      

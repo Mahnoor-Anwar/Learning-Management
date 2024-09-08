@@ -9,7 +9,7 @@ import { TextField, MenuItem, Button, Container, Typography } from "@mui/materia
 const Addsubject = () => {
   const [subName, setName] = useState("");
   const [forClass, setForClass] = useState("");
-  const [description, setDescription] = useState("");
+  const [teacher, setTeacher] = useState("");
   const navigate = useNavigate();
 
   const classOptions = [
@@ -22,14 +22,14 @@ const Addsubject = () => {
     { value: 7, label: 7 },
     { value: 8, label: 8 },
     { value: 9, label: 9 },
-    { value: 0, label: 10 },
+    { value: 10, label: 10 },
   ];
 
   const addData = async () => {
     let studentObj = {
       subName,
       forClass,
-      description
+      teacher
      
     };
 
@@ -55,14 +55,14 @@ const Addsubject = () => {
   };
 
   return (
-    <Container>
+    <Container className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Add Subject
       </Typography>
       <TextField
         fullWidth
         margin="normal"
-        label="Name"
+        label="Subject Name"
         onChange={(e) => setName(e.target.value)}
       />
      
@@ -71,7 +71,7 @@ const Addsubject = () => {
         margin="normal"
         select
         label="Class"
-        value={forClass}
+      
         onChange={(e) => setForClass(e.target.value)}
       >
         {classOptions.map((option) => (
@@ -84,8 +84,8 @@ const Addsubject = () => {
         fullWidth
         margin="normal"
         type="text"
-        label="Description"
-        onChange={(e) => setDescription(e.target.value)}
+        label="Teacher Name"
+        onChange={(e) => setTeacher(e.target.value)}
       />
       <Button
         variant="contained"

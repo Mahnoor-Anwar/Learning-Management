@@ -28,7 +28,7 @@ const AddTeacher = () => {
     { value: 7, label: 7 },
     { value: 8, label: 8 },
     { value: 9, label: 9 },
-    { value: 0, label: 10 },
+    { value: 10, label: 10 },
   ];
 
   const addData = async () => {
@@ -62,14 +62,14 @@ const AddTeacher = () => {
   };
 
   return (
-    <Container>
+    <Container className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Add Teacher
       </Typography>
       <TextField
         fullWidth
         margin="normal"
-        label="Name"
+        label="Teacher Name"
         onChange={(e) => setName(e.target.value)}
       />
     

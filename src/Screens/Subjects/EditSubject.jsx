@@ -10,7 +10,7 @@ const EditSubject = () => {
   const [editData, setEditData] = useState({
     subName: "",
     forClass: "",
-    description:""
+    teacher:""
   });
   const { id } = useParams();
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const EditSubject = () => {
     { value: 7, label: 7 },
     { value: 8, label: 8 },
     { value: 9, label: 9 },
-    { value: 0, label: 10 },
+    { value: 10, label: 10 },
   ];
 
   const handleChange = (e) => {
@@ -70,7 +70,7 @@ const EditSubject = () => {
   }, [id]);
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Edit Student
       </Typography>
@@ -103,17 +103,18 @@ const EditSubject = () => {
           
       <FormControl fullWidth margin="normal">
         <TextField
-          label="Description"
-          value={editData.description}
+          label="Teacher Name"
+          value={editData.teacher}
           onChange={handleChange}
-          name="description"
+          name="teacher"
           variant="outlined"
         />
       </FormControl>
      
       <Button 
         variant="contained" 
-        color="primary" 
+        // color="primary" 
+        className="addbtn"
         onClick={handleEdit}
         fullWidth
       >

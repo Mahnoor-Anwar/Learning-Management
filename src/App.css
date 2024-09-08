@@ -135,3 +135,21 @@
 .addbtn {
   background-color:#67526b !important ;
 }
+
+.navbarlinks {
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+}
+
+.listheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+

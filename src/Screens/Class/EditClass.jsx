@@ -33,7 +33,7 @@ const EditClass = () => {
     { value: 7, label: 7 },
     { value: 8, label: 8 },
     { value: 9, label: 9 },
-    { value: 0, label: 10 },
+    { value: 10, label: 10 },
   ];
 
   const handleChange = (e) => {
@@ -52,7 +52,7 @@ const EditClass = () => {
         text: "Student Edited Successfully",
         icon: "success",
       });
-      navigate("/admissionForm");
+      navigate("/admissionList");
     } catch (err) {
       Swal.fire({
         title: "Error",
@@ -76,13 +76,13 @@ const EditClass = () => {
   }, [id]);
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" className="container  mt-5">
       <Typography variant="h4" gutterBottom>
         Edit Student
       </Typography>
       <FormControl fullWidth margin="normal">
         <TextField
-          label="Name"
+          label="Student Name"
           value={editData.stuName}
           onChange={handleChange}
           name="stuName"
@@ -151,7 +151,8 @@ const EditClass = () => {
       </FormControl>
       <Button 
         variant="contained" 
-        color="primary" 
+        // color="primary"
+        className="addbtn" 
         onClick={handleEdit}
         fullWidth
       >

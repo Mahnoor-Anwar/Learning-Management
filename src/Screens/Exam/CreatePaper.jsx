@@ -41,7 +41,7 @@ const CreatePaper = () => {
   };
 
   return (
-    <Paper sx={{ p: 3 }}>
+    <Paper sx={{ p: 3 , mt:5}} className="container  mt-5">
       <h1>Create Paper</h1>
       <Box component="form" onSubmit={handleSubmit} noValidate autoComplete="off">
         <TextField
